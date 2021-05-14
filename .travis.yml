@@ -9,7 +9,7 @@ python:
 
 branches:
   only:
-    - master
+    - main
 
 before_script:
   - python --version
