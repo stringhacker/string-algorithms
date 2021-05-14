@@ -1,11 +1,16 @@
 language: python
-dist: trusty
+dist: focal
 
 python:
-  - 3.6
   - 3.7
-  - 3.8
-  - 3.9
+
+addons:
+  apt:
+    update: true
+    sources:
+      - sourceline: 'ppa:ubuntu-toolchain-r/test'
+    packages:
+      - python3-pip
 
 branches:
   only:
@@ -13,6 +18,7 @@ branches:
 
 before_script:
   - python --version
+  - sudo python3 -m pip install pylint
   - export LARGE=1
 
 script:
