@@ -35,15 +35,14 @@ pomijając przy tym czynniki pośrednie, występujące pomiędzy tymi z faktoryz
 Algorytm zatem wygląda następująco:
 
 \begin{algorithmic} 
-\REQUIRE LPF
+\REQUIRE LPF, $n$
 \ENSURE LZ
 \STATE $pos \gets 1$
 \STATE $s \gets \Phi[i]$
-\WHILE{$text[i+l] = text[s+l]$}
-\STATE $l \gets l + 1$
+\WHILE{$pos \leq n$}
+\STATE $push(max(1, $LPF[$pos$]$),$ LZ $)$
+\STATE $pos \gets pos + max(1, $LPF[$pos$]$)$
 \ENDWHILE
-\STATE $\PLCP[i] \gets l$
-\STATE $l \gets \max(l - 1, 0)$
 \end{algorithmic}
 
 \end{document}
