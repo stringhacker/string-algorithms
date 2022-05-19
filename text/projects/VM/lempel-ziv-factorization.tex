@@ -30,16 +30,17 @@ i to jego długość będzie występować w tej tablicy, na pozycji $i$-tej.
 
 Gdy posiadamy tablicę LPF, wyznaczanie faktoryzacji nie jest trudne.
 Łatwo zauważyć, że ``najdłuższy poprzedni czynnik'', to dokładnie taki czynnik jakiego potrzebujemy do faktoryzacji.
-Czyli, wystarczy przejść po tablicy LPF zwracając kolejne czynniki,
+Wystarczy zatem przejść po tablicy LPF zwracając kolejne czynniki,
 pomijając przy tym czynniki pośrednie, występujące pomiędzy tymi z faktoryzacji,
 oraz zamieniając wszystkie zera na jedynki w tablicy LPF, ponieważ faktoryzacja nie zawiera słów pustych.
-Algorytm zatem wygląda następująco:
+Algorytm wygląda następująco:
 
 \begin{algorithm}
 \caption{lempel\_ziv\_factorization}
 \begin{algorithmic} 
 \REQUIRE LPF, $n$
 \ENSURE LZ
+\STATE LZ $\gets [\;]$
 \STATE $pos \gets 1$
 \WHILE{$pos \leq n$}
 \STATE $push(max(1, $LPF[$pos$]$),$ LZ $)$
