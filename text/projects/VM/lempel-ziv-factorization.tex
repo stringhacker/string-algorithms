@@ -23,7 +23,12 @@ jest albo najdłużsym prefiksem $u_i u_{i + 1} ... u_k$ i występuje jako pods�
 ale nie tylko jako sufiks,
 albo jest pojedynczym symbolem, gdy takiego prefiksu nie ma.
 
-Algorytm korzysta z tablicy Longest Previous Factor.
+Authorzy proponują algorytm pozwalający obliczać faktoryzację w czasie liniowym i pamięci $o(n)$.
+Jeszcze poprzedni wynik tych samych autorów osiągał liniowy czas i pamięć,
+natomiast różnica pomiędzy dużym $O(n)$ tamtego algorytmu, i małym $o(n)$ dzisiejszego, jest na tyle istotna,
+że nowy algorytm został opublikowany.
+
+Algorytm ten, tak jak i poprzedni, korzysta z tablicy Longest Previous Factor.
 Aby zrozumieć co to jest, weźmy taki najdłużsy czynnik słowa $w[1..i]$, równy $m$.
 Wtedy $m$ musi być najdłużsym podsłowem słowa $w[1..i + |m| - 1]$,
 i to jego długość będzie występować w tej tablicy, na pozycji $i$-tej.
@@ -51,5 +56,7 @@ Algorytm wygląda następująco:
 
 Pozostaje wyznaczenie LPF. Do tego autorzy korzystają z tablic SA, i LCP --
 z uporządkowanej tablicy sufiksów i tablicy najdłuższych prefiksów między nimi.
+
+%% Wiadomo, że obie te tablicy można wyznaczyć w czasie stałym
 
 \end{document}
