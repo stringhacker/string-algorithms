@@ -35,20 +35,15 @@ pomijając przy tym czynniki pośrednie, występujące pomiędzy tymi z faktoryz
 Algorytm zatem wygląda następująco:
 
 \begin{algorithmic} 
-\REQUIRE SA, LCP
+\REQUIRE LPF
 \ENSURE LZ
-\FOR{$i=1$ \TO $n$}
-\STATE SA[i] = SA[i - 1]
-\ENDFOR
-\STATE $l \gets 0$
-\FOR{$i=1$ \TO $n$}
+\STATE $pos \gets 1$
 \STATE $s \gets \Phi[i]$
 \WHILE{$text[i+l] = text[s+l]$}
 \STATE $l \gets l + 1$
 \ENDWHILE
 \STATE $\PLCP[i] \gets l$
 \STATE $l \gets \max(l - 1, 0)$
-\ENDFOR
 \end{algorithmic}
 
 \end{document}
