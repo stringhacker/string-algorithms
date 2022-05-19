@@ -34,15 +34,17 @@ Czyli, wystarczy przejść po tablicy LPF zwracając kolejne czynniki,
 pomijając przy tym czynniki pośrednie, występujące pomiędzy tymi z faktoryzacji.
 Algorytm zatem wygląda następująco:
 
+\begin{algorithm}
+\caption{lempel\_ziv\_factorization}
 \begin{algorithmic} 
 \REQUIRE LPF, $n$
 \ENSURE LZ
 \STATE $pos \gets 1$
-\STATE $s \gets \Phi[i]$
 \WHILE{$pos \leq n$}
 \STATE $push(max(1, $LPF[$pos$]$),$ LZ $)$
 \STATE $pos \gets pos + max(1, $LPF[$pos$]$)$
 \ENDWHILE
 \end{algorithmic}
+\end{algorithm}
 
 \end{document}
