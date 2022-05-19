@@ -38,7 +38,7 @@ Gdy posiadamy tablicę LPF, wyznaczanie faktoryzacji nie jest trudne.
 Wystarczy zatem przejść po tablicy LPF zwracając kolejne czynniki,
 pomijając przy tym czynniki pośrednie, występujące pomiędzy tymi z faktoryzacji,
 oraz zamieniając wszystkie zera na jedynki w tablicy LPF, ponieważ faktoryzacja nie zawiera słów pustych.
-Algorytm wygląda następująco:
+\textbf{Algorithm 1} jest implementacją powyższej logiki.
 
 \begin{algorithm}
 \caption{lempel\_ziv\_factorization}
