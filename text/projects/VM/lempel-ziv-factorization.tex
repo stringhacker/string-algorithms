@@ -34,7 +34,7 @@ Aby zrozumieć co to jest, weźmy taki najdłużsy czynnik słowa $w[1..i]$, ró
 Wtedy $m$ musi być najdłużsym podsłowem słowa $w[1..i + |m| - 1]$,
 i to jego długość będzie występować w tablicy LPF, na pozycji $i$-tej.
 
-Gdy posiadamy tablicę LPF, wyznaczanie faktoryzacji nie jest trudne.
+Gdy już posiadamy tablicę LPF, wyznaczanie faktoryzacji nie jest trudne.
 Łatwo zauważyć, że ``najdłuższy poprzedni czynnik'', to dokładnie taki czynnik jakiego potrzebujemy do faktoryzacji.
 Wystarczy zatem przejść po tablicy LPF zwracając kolejne czynniki,
 pomijając przy tym czynniki pośrednie, występujące pomiędzy tymi z faktoryzacji,
