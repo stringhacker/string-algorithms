@@ -38,13 +38,13 @@ Algorytm wygląda następująco:
 \begin{algorithm}
 \caption{lempel\_ziv\_factorization}
 \begin{algorithmic} 
-\REQUIRE LPF, $n$
+\REQUIRE LPF, n
 \ENSURE LZ
 \STATE LZ $\gets [\;]$
-\STATE $pos \gets 1$
-\WHILE{$pos \leq n$}
-\STATE $push(max(1, $LPF[$pos$]$),$LZ$)$
-\STATE $pos \gets pos + max(1, $LPF[$pos$]$)$
+\STATE pos $\gets$ 1
+\WHILE{pos $\leq$ n}
+\STATE push(max(1, LPF[pos]), LZ)
+\STATE pos $\gets$ pos + max(1, LPF[pos])
 \ENDWHILE
 \end{algorithmic}
 \end{algorithm}
