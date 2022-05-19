@@ -1,0 +1,54 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\DeclareMathOperator{\SA}{SA}
+\DeclareMathOperator{\LCP}{LCP}
+
+\title{A simple algorithm for Lempel-Ziv factorization}
+\author{*}
+
+\begin{document}
+
+\maketitle
+
+Faktoryzacja Lempel-Ziv'a dla słowa $w$ jest takim rozkładem $u_0 u_1 ... u_k = w$,
+że każde $u_i$, za wyjątkiem możliwie ostatniego,
+jest albo najdłużsym prefiksem $u_i u_{i + 1} ... u_k$ i występuje jako podsłowo w $u_0 u_1 ... u_i$,
+ale nie tylko jako sufiks,
+albo jest pojedynczym symbolem, gdy takiego prefiksu nie ma.
+
+Algorytm korzysta z tablicy Longest Previous Factor.
+Aby zrozumieć co to jest, weźmy najdłużsy czynnik słowa $w[1..i]$, równy $m$.
+Wtedy $m$ musi być najdłużsym podsłowem słowa $w[1..i + |m| - 1]$,
+a jego długość będzie na pozycji $i$-tej tej tablicy.
+
+Gdy posiadamy tablicę LPF, to wyznaczanie faktoryzacji nie jest trudne,
+ponieważ ``najdłuższy poprzedni czynnik'', to dokładnie taki czynnik jakiego potrzebujemy do faktoryzacji.
+Czyli, wystarczy przejść po tablicy LPF zwracając kolejne czynniki,
+pomijając przy tym czynniki pośrednie, występujące pomiędzy tymi z faktoryzacji.
+Algorytm zatem wygląda następująco:
+
+\begin{algorithmic} 
+\REQUIRE SA, LCP
+\ENSURE LZ
+\FOR{$i=1$ \TO $n$}
+\STATE SA[i] = SA[i - 1]
+\ENDFOR
+\STATE $l \gets 0$
+\FOR{$i=1$ \TO $n$}
+\STATE $s \gets \Phi[i]$
+\WHILE{$text[i+l] = text[s+l]$}
+\STATE $l \gets l + 1$
+\ENDWHILE
+\STATE $\PLCP[i] \gets l$
+\STATE $l \gets \max(l - 1, 0)$
+\ENDFOR
+\end{algorithmic}
+
+\end{document}
