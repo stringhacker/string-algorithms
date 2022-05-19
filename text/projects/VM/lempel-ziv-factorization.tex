@@ -26,7 +26,7 @@ albo jest pojedynczym symbolem, gdy takiego prefiksu nie ma.
 Algorytm korzysta z tablicy Longest Previous Factor.
 Aby zrozumieć co to jest, weźmy taki najdłużsy czynnik słowa $w[1..i]$, równy $m$.
 Wtedy $m$ musi być najdłużsym podsłowem słowa $w[1..i + |m| - 1]$,
-a jego długość będzie w tej tablicy na pozycji $i$-tej.
+i to jego długość będzie występować w tej tablicy, na pozycji $i$-tej.
 
 Gdy posiadamy tablicę LPF, to wyznaczanie faktoryzacji nie jest trudne,
 ponieważ ``najdłuższy poprzedni czynnik'', to dokładnie taki czynnik jakiego potrzebujemy do faktoryzacji.
