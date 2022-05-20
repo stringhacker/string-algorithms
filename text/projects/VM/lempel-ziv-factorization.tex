@@ -13,6 +13,7 @@
 
 \DeclareMathOperator{\SA}{SA}
 \DeclareMathOperator{\LCP}{LCP}
+\DeclareMathOperator{\LPF}{LPF}
 
 \title{A simple algorithm for Lempel-Ziv factorization}
 \author{VM}
@@ -133,7 +134,12 @@ Rysunek 1 należy odczytywać w następujący sposób:
 \item wartości przy krawędziach przerywanych to są wartości tablic $\LCP_{i}$.
 \end{itemize}
 
-Algorytm obliczający 
-Rozważmy trzy
+Algorytm obliczający LPF będzie iterować tablice $\SA$ od lewej do prawej.
+Trzy przypadki są do rozważenia w takim razie:
+
+\begin{enumerate}
+\item $\SA[i - 1] < \SA[i] > \SA[i + 1]$, czyli przypadek lokalnego maksimum.
+  W tym przypadku, $\LPF[\SA[i]] = \max(\LCP[i], \LCP[i + 1])$, $\LCP[\SA[i]] = \max(LCP[i], \LCP[i + 1])$.
+\end{enumerate}
 
 \end{document}
