@@ -144,10 +144,10 @@ Trzy przypadki są do rozważenia:
 \item[(2)] $\SA[i - 1] < \SA[i] < \SA[i + 1] \land \LCP[i] \geq \LCP[i + 1]$.
   W tym przypadku nic lepszego od ustawienia $\LPF[\SA[i]] = \max(\LCP[i], \LCP[i + 1])$ nie ma.
 \item[(3)] $\SA[i - 1] > \SA[i] > \SA[i + 1] \land \LCP[i] \leq \LCP[i + 1]$.
-  Ponieważ my idziemy od lewej do prawej, to ten przypadek nigdy nie występuje.
+  Ponieważ my idziemy od lewej do prawej, to przypadek (1) zapobiega występowaniu takiego scenariusza.
 
 
-  
+
 \end{enumerate}
 
 \end{document}
