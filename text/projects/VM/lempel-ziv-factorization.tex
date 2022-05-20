@@ -10,6 +10,9 @@
 \theoremstyle{definition}
 \newtheorem{lemma}{Lemma}[section]
 
+\DeclareMathOperator{\SA}{SA}
+\DeclareMathOperator{\LCP}{LCP}
+
 \title{A simple algorithm for Lempel-Ziv factorization}
 \author{VM}
 
@@ -81,10 +84,10 @@ Wartości tablicy LPF są największymi wpsólnymi prefiksami między elementami
 
 \begin{proof}
 
-Niech $w$ będzie słowem i $SA_{i}$ będą kolejnymi tablicami prefiksów słowa $w$, uzupełnione o -1 na końcu.
-Czyli $SA_{i} = [ SA[k] : SA[k] \leq i ] \cup [-1]$.
-Weźmy dowolne $i$, oraz indeks $x$ którego wartość jest maksymalna w tablicy $SA_{i}$,
- czyli $x$ = $\max\limits_{y} \{ x : SA_{i}[x] = y \}$.
+Niech $w$ będzie słowem i $\SA_{i}$ będą kolejnymi tablicami prefiksów słowa $w$, uzupełnione o -1 na końcu.
+Czyli $\SA_{i} = [ \SA[k] : \SA[k] \leq i ] \cup [-1]$.
+Weźmy dowolne $i$, oraz indeks $x$ którego wartość jest maksymalna w tablicy $\SA_{i}$,
+ czyli $x$ = $\max\limits_{y} \{ x : \SA_{i}[x] = y \}$.
 Zauważmy, że dla takiego sufiksu $w[x .. n]$, odpowiedni najdłuższy czynnik poprzedni (w sensie definicji LPF)
  jest największym wspólnym prefiksem tego sufiksu z poprzednim, lub z kolejnym sufiksem w tablicy SA.
 Jest tak dlatego, że to te sufiksy są najbliżej sufiksu $w[x .. n]$, zatem mają najdłuższy wspólny z nim prefix.
@@ -98,8 +101,9 @@ Tablica LPF jest permutacją tablicy LCP.
 
 \begin{proof}
 
-Aby dowieść tezę, wystarczy pokazać, że przejście od $SA_{i}$ do $SA_{i - 1}$ zawiera równoważne przejście w tablicy LCP.
-Czyli, gdy $SA_{i}$ jest nadzbiorem $SA_{i - 1}$, to LCP też jest.
+Ponieważ najwięsze wspólne prefiksy pomiędzy sufiksami $\SA_{n}$, to jest po prostu tablica LCP.
+Aby dowieść tezę, wystarczy pokazać, że przejście od $\SA_{i}$ do $\SA_{i - 1}$ zawiera równoważne przejście w tablicy LCP.
+Czyli, gdy $\SA_{i}$ jest nadzbiorem $\SA_{i - 1}$, to LCP też jest.
 
 
 \end{proof}
