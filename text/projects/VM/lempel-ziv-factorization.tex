@@ -104,7 +104,8 @@ Tablica LPF jest permutacją tablicy LCP.
 Ponieważ najwięsze wspólne prefiksy pomiędzy sufiksami $\SA_{n}$, to jest po prostu tablica LCP.
 Aby dowieść tezę, wystarczy pokazać, że przejście od $\SA_{i}$ do $\SA_{i - 1}$ zawiera równoważne przejście w tablicy LCP.
 Czyli, gdy $\SA_{i}$ jest nadzbiorem $\SA_{i - 1}$, to $\LCP_{i}$ też jest nadzbiorem $\LCP_{i - 1}$.
-Jednak to $\LCP_{i}$ definiujemy inaczej: $\LCP_{i} = \LCP_{i + 1}$.
+Przejście definiujemy tak, że dla największego elementu w $\SA_{i}$ odpowiednie wartości $\LCP$ dla jego następnika
+ to minimum wartości następnika i poprzednika maksymalnego elementu w $\LCP$, natomiast wszystkie inne wartości pozostają bez zmian.
 
 \end{proof}
 \end{lemma}
