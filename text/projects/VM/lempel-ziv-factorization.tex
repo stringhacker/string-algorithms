@@ -130,7 +130,7 @@ Aby zobaczyć jak dokładnie bedzie zmieniać się tablica sufiksów i tablica n
 Rysunek 1 należy odczytywać w następujący sposób:
 \begin{itemize}
 \item wartości w wieszchołkach to są kolejne wartości z tablicy $\SA$,
-\item wartości przy krawędziach zwykłych to są początkowe wartości z tablicy $\LCP$,
+\item wartości przy krawędziach zwykłych to są wartości z tablicy $\LCP$,
 \item wartości przy krawędziach przerywanych to są wartości tablic $\LCP_{i}$.
 \end{itemize}
 
@@ -138,9 +138,11 @@ Algorytm obliczający LPF będzie iterować tablice $\SA$ od lewej do prawej.
 Trzy przypadki są do rozważenia w takim razie:
 
 \begin{enumerate}
-\item $\SA[i - 1] < \SA[i] > \SA[i + 1]$, czyli przypadek lokalnego maksimum.
+\item[(1)] $\SA[i - 1] < \SA[i] > \SA[i + 1]$, czyli przypadek lokalnego maksimum.
   W tym przypadku, $\LPF[\SA[i]] = \max(\LCP[i], \LCP[i + 1])$.
   Nowa krawędź zostaje stworzona, zastępująca $\LCP[i], \LCP[i + 1]$, z wagą równą $\min(\LCP[i], \LCP[i + 1])$.
+\item[(2)] $\SA[i - 1] < \SA[i] < \SA[i + 1] \land \LCP[i] \geq \LCP[i + 1]$.
+  
 \end{enumerate}
 
 \end{document}
