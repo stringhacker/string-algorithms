@@ -30,9 +30,9 @@ natomiast różnica pomiędzy dużym $O(n)$ tamtego algorytmu, i małym $o(n)$ d
 
 Algorytm ten, tak jak i poprzedni, korzysta z tablicy Longest Previous Factor.
 Aby zrozumieć co to jest, weźmy dowolne słowo $m$.
-Jeśli $m$ jest najdłużsym czynnikiem poprzednim,
-to musi ono być najdłużsym podsłowem słowa $w[1..i + |m| - 1]$ spośród wszystkich możliwych prefiksów $w[i..n]$.
-Jego długość będzie występować w tablicy LPF, na pozycji $i$-tej.
+Aby $m$ było najdłużsym czynnikiem poprzednim,
+musi ono być najdłużsym podsłowem słowa $w[1..i + |m| - 1]$ spośród wszystkich możliwych prefiksów $w[i..n]$.
+Wtedy jego długość będzie występować w tablicy LPF, na pozycji $i$-tej.
 
 Gdy już posiadamy tablicę LPF, wyznaczanie faktoryzacji nie jest trudne.
 Łatwo zauważyć, że ``najdłuższy poprzedni czynnik'', to dokładnie taki czynnik jakiego potrzebujemy do faktoryzacji.
