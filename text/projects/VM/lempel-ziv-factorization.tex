@@ -18,27 +18,27 @@
 \maketitle
 
 Faktoryzacja Lempel-Ziv'a dla słowa $w$ jest takim rozkładem $u_0 u_1 ... u_k = w$,
-że każde $u_i$, za wyjątkiem możliwie ostatniego,
-jest albo najdłużsym prefiksem $u_i u_{i + 1} ... u_k$ i występuje jako podsłowo w $u_0 u_1 ... u_i$,
-ale nie tylko jako sufiks,
-albo jest pojedynczym symbolem, gdy takiego prefiksu nie ma.
+ że każde $u_i$, za wyjątkiem możliwie ostatniego,
+ jest albo najdłużsym prefiksem $u_i u_{i + 1} ... u_k$ i występuje jako podsłowo w $u_0 u_1 ... u_i$,
+ ale nie tylko jako sufiks,
+ albo jest pojedynczym symbolem, gdy takiego prefiksu nie ma.
 
 Authorzy proponują algorytm pozwalający obliczać faktoryzację w czasie liniowym i pamięci $o(n)$.
 Jeszcze poprzedni wynik tych samych autorów osiągał liniowy czas i pamięć,
-natomiast różnica pomiędzy dużym $O(n)$ tamtego algorytmu, i małym $o(n)$ dzisiejszego, jest na tyle istotna,
-że nowy algorytm został opublikowany.
+ natomiast różnica pomiędzy dużym $O(n)$ tamtego algorytmu, i małym $o(n)$ dzisiejszego, jest na tyle istotna,
+ że nowy algorytm został opublikowany.
 
 Algorytm ten, tak jak i poprzedni, korzysta z tablicy Longest Previous Factor.
 Aby zrozumieć co to jest, weźmy dowolne słowo $m$.
 Aby $m$ było najdłużsym czynnikiem poprzednim,
-musi ono być najdłużsym podsłowem słowa $w[1..i + |m| - 1]$ spośród wszystkich możliwych prefiksów $w[i..n]$.
+ musi ono być najdłużsym podsłowem słowa $w[1..i + |m| - 1]$ spośród wszystkich możliwych prefiksów $w[i..n]$.
 Wtedy jego długość będzie występować w tablicy LPF na pozycji $i$-tej.
 
 Gdy już posiadamy tablicę LPF, wyznaczanie faktoryzacji nie jest trudne.
 Łatwo zauważyć, że ``najdłuższy poprzedni czynnik'', to prawie dokładnie taki czynnik jakiego potrzebujemy do faktoryzacji.
 Wystarczy zatem przejść po tablicy LPF zwracając kolejne czynniki,
-pomijając przy tym czynniki pośrednie, występujące pomiędzy tymi z faktoryzacji,
-oraz zamieniając wszystkie zera na jedynki w tablicy LPF, ponieważ faktoryzacja nie zawiera słów pustych.
+ pomijając przy tym czynniki pośrednie, występujące pomiędzy tymi z faktoryzacji,
+ oraz zamieniając wszystkie zera na jedynki w tablicy LPF, ponieważ faktoryzacja nie zawiera słów pustych.
 \textbf{Algorithm 1} jest implementacją powyższego rozumowania.
 
 \begin{algorithm}
