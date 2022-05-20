@@ -106,6 +106,7 @@ Aby dowieść tezę, wystarczy pokazać, że przejście od $\SA_{i}$ do $\SA_{i 
 Czyli, gdy $\SA_{i}$ jest nadzbiorem $\SA_{i - 1}$, to $\LCP_{i}$ też jest nadzbiorem $\LCP_{i - 1}$.
 Przejście definiujemy tak, że dla największego elementu w $\SA_{i}$ odpowiednie wartości $\LCP$ dla jego następnika
  to minimum wartości następnika i poprzednika maksymalnego elementu w $\LCP$, natomiast wszystkie inne wartości pozostają bez zmian.
+To ma sens dlatego, że najdłuższy wspólny prefiks między eleementem $i$-tym i $(i + 2)$-ym jest właśnie ten mniejszy prefiks.
 
 \end{proof}
 \end{lemma}
