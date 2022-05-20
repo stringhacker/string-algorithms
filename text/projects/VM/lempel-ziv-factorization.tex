@@ -139,7 +139,8 @@ Trzy przypadki są do rozważenia w takim razie:
 
 \begin{enumerate}
 \item $\SA[i - 1] < \SA[i] > \SA[i + 1]$, czyli przypadek lokalnego maksimum.
-  W tym przypadku, $\LPF[\SA[i]] = \max(\LCP[i], \LCP[i + 1])$, $\LCP[\SA[i]] = \max(LCP[i], \LCP[i + 1])$.
+  W tym przypadku, $\LPF[\SA[i]] = \max(\LCP[i], \LCP[i + 1])$.
+  Nowa krawędź zostaje stworzona, zastępująca $\LCP[i], \LCP[i + 1]$, z wagą równą $\min(\LCP[i], \LCP[i + 1])$.
 \end{enumerate}
 
 \end{document}
