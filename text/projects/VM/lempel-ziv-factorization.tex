@@ -64,8 +64,8 @@ Pozostaje wyznaczenie LPF. Do tego korzystamy z tablic SA, i LCP --
  z uporządkowanej tablicy sufiksów i tablicy najdłuższych prefiksów między nimi.
 Nie będziemy projektować algorytmów do policzenia tych dwóch tablic,
  gdyż wiele takich istnieje.
-
-\pagebreak
+W szczególności algorytm z pracy ``\textit{Constructing suffix arrays in linear time}'' autorów D.K. Kim, J.S. Sim, H. Park i K.Park,
+ dla SA, oraz ``\textit{Two space-saving tricks for linear-time LCP computation}'' autora G. Manzini, dla LCP.
 
 %% W szczególności, do policzenia tablicy SA proponowano jest użyć którykolwiek z poniższych algorytmów:
 %% \begin{enumerate}
@@ -124,8 +124,6 @@ Aby zobaczyć jak dokładnie bedzie zmieniać się tablica sufiksów i tablica n
   \includegraphics[width=0.6\linewidth]{graph}
   \caption{Graf ilustrujący zmieniający się stan w algorytmie LPF gdy słowo $abbaabbbaaabab$ jest na wejściu.}
 \end{figure}
-
-\pagebreak
 
 Rysunek 1 należy odczytywać w następujący sposób:
 \begin{itemize}
