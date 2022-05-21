@@ -200,6 +200,8 @@ Ponieważ $LCP[i_{j + 2}] > LCP[i_{j + 1}]$ i $w[i_{j} ... i_{j} + LCP[i_{j + 1}
  ma wspólne podsłowo z $w[i_{j + 1} ... i_{j + 1} + LCP[i_{j + 1}] - 1]$
  o długości co najmniej $i_{j + 1} - i_{j}$,
  to pierwiaski pierwotne dwóch okresów powinne się synchronizować.
+W takim razie, okres $i_{j + 1} - i_{j}$ kończy się dalej niż $i_{j + 1} + LCP[i_{j + 1}] - 1$ w słowie $w$.
+Czyli, $LCP[i_{j + 1}$ jest ściśle mniejszy od prawdziwych długości najdłuższych wspólnych prefiksów.
 
 
 \end{proof}
