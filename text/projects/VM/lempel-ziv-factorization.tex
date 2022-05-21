@@ -203,6 +203,9 @@ Ponieważ $LCP[i_{j + 2}] > LCP[i_{j + 1}]$ i $w[i_{j} ... i_{j} + LCP[i_{j + 1}
 W takim razie, okres $i_{j + 1} - i_{j}$ kończy się dalej niż $i_{j + 1} + LCP[i_{j + 1}] - 1$ w słowie $w$.
 Czyli, $LCP[i_{j + 1}$ jest ściśle mniejszy od prawdziwych długości najdłuższych wspólnych prefiksów.
 
+Ponieważ $i_{j + 2} - i_{j} \geq \LCP[i_{j + 1}]$ i $\LCP[i_{j + 1}]$, to implikuje,
+ że rozmiar stosu, czyli $k$, jest w obrębie $O(\sqrt{n})$.
+A to znaczy, że maksymalny rozmiar stosu miejści się w $o(n)$.
 
 \end{proof}
 \end{lemma}
