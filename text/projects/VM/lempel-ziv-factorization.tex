@@ -146,7 +146,8 @@ Trzy przypadki są do rozważenia:
 \end{enumerate}
 
 Algorytm będzie próbował stosować reguły (1) i (2) na każdym kroku iteracji.
-Aby zachować odpowiednią kolejność, utrzymywany będzie stos indeksów do tablic $\SA$ i $\LCP$.
+Aby zachować odpowiednią kolejność i zapobiec faktycznemu utworzeniu grafu,
+ utrzymywany będzie stos indeksów do tablic $\SA$ i $\LCP$.
 Kod algorytmu jest przedstawiony niżej.
 
 \begin{algorithm}
