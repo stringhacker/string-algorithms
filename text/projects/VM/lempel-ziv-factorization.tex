@@ -194,8 +194,13 @@ Rozważmy dowolne $\LCP[i_j]$. Zawiera ono najdłuższy wspólny prefiks sufiks�
 Pokażemy teraz, że $i_{j + 2} - i_{j} \geq LCP[i_{j + 1}$.
 Załóżmy, że tak nie jest.
 Wtedy czynnik $w[i_j ... i_{j + 1} + \LCP[i_{j + 1} - 1]$ ma okres o długości $i_{j + 1} - i_{j}$
- (dzięki temu, że występuje nakładanie się czynników $w[i_{j} ... i_{j} + LCP[i_{j + 1}] - 1]$ 
+ (dzięki temu, że występuje nakładanie się czynników $w[i_{j} ... i_{j} + LCP[i_{j + 1}] - 1]$
   i $w[i_{j + 1} ... i_{j + 1} + LCP[i_{j + 1}] - 1]$).
+Ponieważ $LCP[i_{j + 2}] > LCP[i_{j + 1}]$ i $w[i_{j} ... i_{j} + LCP[i_{j + 1}] - 1]$
+ ma wspólne podsłowo z $w[i_{j + 1} ... i_{j + 1} + LCP[i_{j + 1}] - 1]$
+ o długości co najmniej $i_{j + 1} - i_{j}$,
+ to pierwiaski pierwotne tych dwóch okresów powinne się synchronizować.
+
 
 \end{proof}
 \end{lemma}
