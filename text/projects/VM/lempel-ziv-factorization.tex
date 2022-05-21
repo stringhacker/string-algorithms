@@ -156,7 +156,7 @@ Kod algorytmu jest przedstawiony niżej.
 \ENSURE LPF
 \STATE SA[n + 1] $\gets$ -1
 \STATE LCP[n + 1] $\gets$ 0
-\STATE push(1, L)
+\STATE L $\gets$ [1]
 \FOR{i = 1 $\TO$ n + 1}
 \WHILE{L $\neq$ $\emptyset$ $\land$ \\
        \qquad (SA[i] $<$ SA[TOP(L)] $\lor$ \\
