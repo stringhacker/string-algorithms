@@ -177,6 +177,23 @@ Kod algorytmu jest przedstawiony niżej.
 \end{algorithmic}
 \end{algorithm}
 
+Pozostaje pokazanie złożoności pamięciowej algorytmu.
+
+\begin{lemma}
+
+\textbf{Algorithm 2} używa $o(n)$ pamięci.
+
+\begin{proof}
+
+Ponieważ największe wspólne prefiksy pomiędzy sufiksami $\SA_{n}$ to jest po prostu tablica LCP,
+ wystarczy pokazać, że przejście od $\SA_{i}$ do $\SA_{i - 1}$ zawiera równoważne przejście w tablicy LCP.
+Czyli, gdy $\SA_{i}$ jest nadzbiorem $\SA_{i - 1}$, to $\LCP_{i}$ też jest nadzbiorem $\LCP_{i - 1}$.
+Zauważmy, że najdłuższy wspólny prefiks między eleementem $i$-tym i $(i + 2)$-ym jest mniejszy prefiks między $i$-tym i $(i + 1)$-ym a $(i + 1)$-ym i $(i + 2)$-im.
+Zatem przejście definiujemy tak, że dla największego elementu w $\SA_{i}$, odpowiednie wartości $\LCP$ dla jego następnika
+ to minimum wartości następnika i poprzednika maksymalnego elementu w $\LCP$, natomiast wszystkie inne wartości pozostają bez zmian.
+
+\end{proof}
+\end{lemma}
 
 
 \end{document}
