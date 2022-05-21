@@ -5,6 +5,7 @@
 \usepackage{amssymb}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{algpseudocode}
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
 
@@ -163,6 +164,11 @@ W ten sposób otrzymujemy \textbf{Algorithm 2}.
 \WHILE{L $\neq$ $\emptyset$ $\land$ \\
        \qquad (SA[i] $<$ SA[TOP(L)] $\lor$ \\
        \qquad (SA[i] $>$ SA[TOP(L)] $\land$ LCP[i] $\leq$ LCP[TOP(L)]))}
+
+\IF{$SA[i] < SA[TOP(L)]$}
+LOL
+\ENDIF
+
 \STATE KEK
 \ENDWHILE
 \STATE push(max(1, LPF[pos]), LZ)
