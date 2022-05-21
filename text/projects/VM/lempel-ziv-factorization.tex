@@ -165,13 +165,16 @@ W ten sposób otrzymujemy \textbf{Algorithm 2}.
        \qquad (SA[i] $>$ SA[TOP(L)] $\land$ LCP[i] $\leq$ LCP[TOP(L)]))}
 
 \IF{$SA[i] < SA[TOP(L)]$}
-LOL
+\STATE LPF[SA[TOP(L)]] $\gets$ max(LCP[TOP(L)], LCP[i])
+\STATE LCP[i] $\gets$ min(LCP[TOP(L)], LCP[i])
+\ELSE
+\STATE LPF[SA[TOP(L)]] $\gets$ LCP[TOP(L)]
 \ENDIF
-
-\STATE KEK
+\STATE pop(L)
 \ENDWHILE
-\STATE push(max(1, LPF[pos]), LZ)
-\STATE pos $\gets$ pos + max(1, LPF[pos])
+\IF{i $\leq$ n}
+\STATE push(i, L)
+\ENDIF
 \ENDFOR
 \end{algorithmic}
 \end{algorithm}
